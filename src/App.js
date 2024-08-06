@@ -1,8 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
   const [phNumber, setPhNumber] = useState("");
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  const isValidNumber = () => {
+    if (phNumber.length !== 10) {
+      setBtnDisabled(true);
+      return;
+    }
+    for (let i = 0; i < phNumber.length; i++) {
+      if (isNaN(parseInt(phNumber[i]))) {
+        setBtnDisabled(true);
+        return;
+      }
+    }
+    setBtnDisabled(false);
+  };
+  useEffect(() => {
+    isValidNumber();
+  }, [phNumber]);
+
   // rgb(37, 211, 102)
   return (
     <div className="App">
@@ -25,7 +43,9 @@ function App() {
             <div className="ms-3 me-3">
               <input
                 value={phNumber}
-                onChange={(e) => setPhNumber(e.target.value)}
+                onChange={(e) => {
+                  setPhNumber(e.target.value);
+                }}
                 type="text"
                 className="form-control"
                 placeholder="Enter the phone number, you want to chat with..."
@@ -35,7 +55,9 @@ function App() {
               rel="noreferrer"
               target="_blank"
               href={`https://api.whatsapp.com/send/?phone=91${phNumber}&text=Hello&type=phone_number&app_absent=0`}
-              className="my-4 btn btn-primary"
+              className={`my-4 btn btn-primary ${
+                btnDisabled ? "disabled" : ""
+              }`}
             >
               <i class="bi bi-whatsapp"></i> <span>Chat on whatsapp</span>
             </a>
