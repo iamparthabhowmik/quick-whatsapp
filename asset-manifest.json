@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/iamparthabhowmik/quick-whatsapp/static/css/main.84a6cc6e.css",
+    "main.js": "/iamparthabhowmik/quick-whatsapp/static/js/main.c279ef53.js",
+    "static/js/453.c4df8452.chunk.js": "/iamparthabhowmik/quick-whatsapp/static/js/453.c4df8452.chunk.js",
+    "index.html": "/iamparthabhowmik/quick-whatsapp/index.html",
+    "main.84a6cc6e.css.map": "/iamparthabhowmik/quick-whatsapp/static/css/main.84a6cc6e.css.map",
+    "main.c279ef53.js.map": "/iamparthabhowmik/quick-whatsapp/static/js/main.c279ef53.js.map",
+    "453.c4df8452.chunk.js.map": "/iamparthabhowmik/quick-whatsapp/static/js/453.c4df8452.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84a6cc6e.css",
+    "static/js/main.c279ef53.js"
+  ]
+}
